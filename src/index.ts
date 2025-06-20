@@ -1,7 +1,7 @@
 import express from 'express'
 import * as dotnev from 'dotenv'
 import clientRouter from './routes/clients'
-import onuRouter from './routes/Onus'
+import onuRouter from './routes/onus'
 import zoneRouter from './routes/zones'
 import obdRouter from './routes/obds'
 
