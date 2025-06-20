@@ -8,7 +8,7 @@ const app = express()
 
 app.use(express.json())
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT as string
 
 app.get('/ping', (_req, res) => {
   res.send('pong')
@@ -17,5 +17,5 @@ app.get('/ping', (_req, res) => {
 app.use('/api/clients', clientRouter)
 
 app.listen(PORT, () => {
-  console.log('Escuchando en puerto 3000')
+  console.log(`Escuchando en puerto ${PORT}`)
 })

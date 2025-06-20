@@ -38,6 +38,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotnev = __importStar(require("dotenv"));
+const clients_1 = __importDefault(require("./routes/clients"));
 dotnev.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
@@ -45,6 +46,7 @@ const PORT = process.env.PORT;
 app.get('/ping', (_req, res) => {
     res.send('pong');
 });
+app.use('/api/clients', clients_1.default);
 app.listen(PORT, () => {
-    console.log("Escuchando en puerto 3000");
+    console.log('Escuchando en puerto 3000');
 });

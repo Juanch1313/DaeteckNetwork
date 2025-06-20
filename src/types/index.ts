@@ -4,3 +4,5 @@ export interface Client {
   maxLimit: string
   target: string
 }
+
+export type NewClient = Omit<Client, 'id'>
